@@ -3,14 +3,12 @@ from django.http import HttpResponse
 
 from .models import Greeting
 import requests
-
+import os
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    r = requests.get('http://httpbin.org/status/418')
-    print r.text
-    return HttpResponse('<pre>' + r.text + '</pre>')
-
+    times = int(os.environ.get('TIMES' , 3))
+    return HttpResponse('Hello! ' * times)
 def db(request):
 
     greeting = Greeting()
@@ -20,3 +18,6 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
+def nithin(request):
+	print 'awesome!'
+	return HttpResponse('kidilan')
