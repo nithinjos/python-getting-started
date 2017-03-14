@@ -14,4 +14,5 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^nithin',hello.views.nithin, name = 'nithin'),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
 ]

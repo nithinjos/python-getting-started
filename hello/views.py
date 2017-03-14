@@ -7,8 +7,12 @@ import os
 # Create your views here.
 def index(request):
     # return HttpResponse('Hello from Python!')
-    times = int(os.environ.get('TIMES' , 3))
-    return HttpResponse('Hello! ' * times)
+    template = get_template('main_page.html')
+    variables = Context({ 'user': request.user })
+    output = template.render(variables)
+    return HttpResponse(output)
+
+    #return render(request, 'main_page.html')
 def db(request):
 
     greeting = Greeting()
