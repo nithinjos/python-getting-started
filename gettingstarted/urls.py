@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^nithin',hello.views.nithin, name = 'nithin'),
     url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$',hello.views.logout_page),
+    url(r'^register/$', hello.views.register_page),
 ]
