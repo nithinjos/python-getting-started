@@ -1,13 +1,13 @@
 {%extends "base.html" %}
-{%block title %}Home{% endblock %}
+{%block title %}Schedule Pickup{% endblock %}
 {%block head %}India Post Pickup Scheduling Service{% endblock %}
 {%block content %}
 {% if user.username %}
-<p>Welcome {{ user.username }}!
- Schedule your pickup <a href="/schedule_pickup/">here.</a></p>
+<p>Welcome {{ user.username }}!<br>
+ Schedule your pickup</p>
+ 
 {% else %}
 <p>Welcome!
 You need to <a href="/login/">login</a></p><br/>
 {% endif %}
 {% endblock %}
-

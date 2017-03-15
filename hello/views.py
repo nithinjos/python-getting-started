@@ -27,9 +27,7 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
-def nithin(request):
-	print 'awesome!'
-	return HttpResponse('kidilan')
+
 
 def logout_page(request):
 	logout(request)
@@ -44,3 +42,6 @@ def register_page(request):
 	form = RegistrationForm()
 	variables= RequestContext(request,{'form':form})
 	return render_to_response('registration/register.html', variables)
+
+def schedule_pickup(request):
+	return render_to_response('schedule_pickup.html',RequestContext(request))
